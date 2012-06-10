@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-ifneq (,$(findstring $(TARGET_BOARD_PLATFORM),qsd8k msm7k))
+ifneq (,$(findstring $(TARGET_BOARD_PLATFORM),qsd8k msm7x30))
 
 LOCAL_C_FLAGS          += -O3
 LOCAL_MODULE_TAGS      := optional
@@ -17,7 +17,7 @@ LOCAL_SHARED_LIBRARIES := liblog libdl libutils libcamera_client libbinder \
 LOCAL_C_INCLUDES       := frameworks/base/services \
                           frameworks/base/include \
                           hardware/libhardware/include
-ifeq ($(TARGET_BOARD_PLATFORM),msm7k)
+ifeq ($(TARGET_BOARD_PLATFORM),msm7x30)
 LOCAL_C_INCLUDES       += hardware/libhardware/modules/gralloc
 LOCAL_CFLAGS           := -DPREVIEW_MSM7K
 else
